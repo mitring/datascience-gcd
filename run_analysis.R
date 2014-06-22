@@ -49,7 +49,7 @@ loadData <- function(dataSet) {
 # Loading column names ...
 features <- read.table(paste(dataDir, "features.txt", sep = "/"))
 # ... and extract only mean and std features
-msFeatures <- grepl("mean|std", features[, 2])
+msFeatures <- grepl(".*mean\\(\\)|.*std\\(\\)", features[, 2])
 
 # Loading names of activities
 activity <- read.table(paste(dataDir, "activity_labels.txt", sep = "/"))
